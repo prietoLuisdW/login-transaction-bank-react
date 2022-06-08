@@ -5,6 +5,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { NavBar } from './Components/NavBar';
 import { Footer } from './Components/Footer';
 import { Landing } from './Components/Landing';
+import { PersonaJuridica } from './Components/PersonaJuridica';
+import { PersonaNatural } from './Components/PersonaNatural';
 
 export default function App() {
   return (
@@ -13,9 +15,9 @@ export default function App() {
         <NavBar/>
         <div>
 
-          
-            <Landing />
-          
+          {/* <Landing /> */}
+          {/* <PersonaJuridica /> */}
+          <PersonaNatural />
 
 
         </div>
