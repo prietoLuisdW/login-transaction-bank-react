@@ -44,9 +44,7 @@ export function FomrLog(){
                         </form>
                     </div>
                 </div>
-                <div>
-                    Informacion Adicional
-                </div>
+
             </div>
 
         </div>

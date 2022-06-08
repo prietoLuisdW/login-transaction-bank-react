@@ -59,9 +59,24 @@
 .logoSFC{
     height: 10px;
 }
+.bg_icon{
+    background-color: rgb(127, 127, 127);
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+.icon1{
+   height: 50px; 
+}
 .fs_nav{
     font-size: small;
     color: aliceblue;
+}
+.fc_grey{
+    color: rgb(127, 127, 127);
+}
+.fc_white{
+    color:aliceblue;
 }
 ._footer{
     background-color: rgb(0, 121, 52);
@@ -69,3 +84,4 @@
     bottom: 0;
     width: 100vw;
 }
+
