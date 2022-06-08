@@ -18,7 +18,7 @@ export function FomrLog(){
                             <div className='row'>
                                 <label className='form-label mb-0 mx-1'>Tipo de Persona</label>
                                 <select id="tipoIdentificacion" className='form-select col mb-3 mx-3'>
-                                    <option selected>Tipo de Persona</option>
+                                    <option selected>Seleccione una Opción</option>
                                     <option>Persona natural</option>
                                     <option>Persona Jurídica</option>
                                 </select>

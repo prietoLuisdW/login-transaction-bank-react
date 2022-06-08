@@ -2,14 +2,20 @@ import './App.css';
 import './style.css'
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { FomrLog } from './Components/FormLog';
+import { NavBar } from './Components/NavBar';
+import { Footer } from './Components/Footer';
 
 export default function App() {
   return (
     <BrowserRouter>
       <div>
-        <FomrLog/>
+        <NavBar/>
+
+
+        <Footer />
       </div>
+
+
     </BrowserRouter>
   );
 }

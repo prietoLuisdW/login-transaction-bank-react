@@ -48,3 +48,24 @@
 .cont_form{
     width: 350px;
 }
+
+.bg_gren{
+    background-color: rgb(127, 127, 127);
+}
+.logo1{
+    height: 50px;
+    margin-left: 10px;
+}
+.logoSFC{
+    height: 10px;
+}
+.fs_nav{
+    font-size: small;
+    color: aliceblue;
+}
+._footer{
+    background-color: rgb(0, 121, 52);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
