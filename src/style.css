@@ -1,0 +1,50 @@
+
+.m_0{
+    margin: 0;
+}
+.p_0{
+    padding: 0;
+}
+.w_50{
+    width: 50px;
+}
+.h_50{
+    height: 60px;
+}
+
+.principal{
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+
+}
+
+.logoBanco{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* .sticky_bottom_midle{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+
+} */
+
+.logoSuper{
+    position: fixed;
+    height: 100vh;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(166,166,166);
+    z-index: 99;
+}
+
+.cont_form{
+    width: 350px;
+}
