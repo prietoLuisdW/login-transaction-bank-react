@@ -1,87 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;700&display=swap');
 
-.m_0{
-    margin: 0;
+*{
+    margin: 0px;
+    padding: 0px;
 }
-.p_0{
-    padding: 0;
-}
-.w_50{
-    width: 50px;
-}
-.h_50{
-    height: 60px;
+body{
+    background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
 }
 
-.principal{
-    margin: auto;
-    margin-top: 10px;
-    position: relative;
-
-}
-
-.logoBanco{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 60px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-/* .sticky_bottom_midle{
-    display: flex;
-    justify-content: center;
-    position: fixed;
-
-} */
-
-.logoSuper{
-    position: fixed;
-    height: 100vh;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    background-color: rgb(166,166,166);
-    z-index: 99;
-}
-
-
-.bg_forms{
-    background-color: rgb(242, 242, 242);
-}
-.bg_gren{
-    background-color: rgb(127, 127, 127);
-}
-.logo1{
-    height: 50px;
-    margin-left: 10px;
-}
-.logoSFC{
-    height: 10px;
-}
-.bg_icon{
-    background-color: rgb(127, 127, 127);
+main{
     display: flex;
     flex-direction: column;
-    padding: 4px;
-}
-.icon1{
-   height: 50px; 
-}
-.fs_nav{
-    font-size: small;
-    color: aliceblue;
-}
-.fc_grey{
-    color: rgb(127, 127, 127);
-}
-.fc_white{
-    color:aliceblue;
-}
-._footer{
-    background-color: rgb(0, 121, 52);
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-}
+  }
 

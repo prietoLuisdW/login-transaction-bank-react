@@ -5,10 +5,10 @@ import IconPerson from '../Utilities/person-white.svg'
 
 export function Landing () {
     return (
-        
+
         <div className="container">
             <div className="d-flex flex-column mt-4 ">
-                <h1 className="text-center fs-5 fc_grey fw-bolder">Bienvenid@ al Nuestro Portal de Pagos</h1>
+                <h1 className="text-center fs-5 fc_grey fw-bolder">Bienvenid@ a Nuestro Portal de Pagos</h1>
                 <h1 className="text-center fs-6 fc_grey">Selecciona el Tipo de Persona</h1>
             </div>
             
