@@ -14,3 +14,11 @@ main{
     flex-direction: column;
   }
 
+  .help{
+      text-align: center;
+      align-items: center;
+      font-size: 12px;
+      font-size: 12px;
+      
+  }
+
