@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AvisoErrorForms, BloqueInput, BtnCancel, BtnSend, Formulario, Input, Select } from "../Elements/Forms";
+import { valUser } from "../Functions/valUser";
 
 export function PersonaNatural (){
     const [tipoDocumento, setTipoDocumento] = useState('Tipo Documento')
@@ -39,6 +40,7 @@ export function PersonaNatural (){
                  }
             setAvisoFormulario('false')
             console.log(datosUsuario)
+            valUser(datosUsuario)
             }else{
                 setAvisoFormulario('true')
                 console.log(avisoFormulario)
@@ -64,7 +66,7 @@ export function PersonaNatural (){
                     <BloqueInput>
                         <label htmlFor="identificacion">Numero de Identificación</label>
                         <Input 
-                            type='text'
+                            type='number'
                             id='identificacion'
                             placeholder="Número de Identificación"
                             onChange={cambiarNumeroIdentificacion}
