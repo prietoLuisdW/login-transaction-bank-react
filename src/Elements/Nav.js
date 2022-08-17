@@ -1,20 +1,19 @@
 import styled from 'styled-components'
+import { styleColor } from './Colors'
 
-const colors = {
-    navBar: '#00433D',
-    textNav: '#FFFBF5',
-}
+
 
 const Header = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: ${colors.navBar};
+    background-color: ${styleColor.navBar};
     top: 0;
     width: 100%;
+    box-shadow: 0px 10px 10px -6px black;
     h1 {
-        color: ${colors.textNav};
+        color: ${styleColor.textNav};
         font-size: 12px;
         font-weight: normal;
         margin: 0px 10px;
@@ -39,13 +38,13 @@ const ContenedorFooter = styled.nav`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: ${colors.navBar};
+    background-color: ${styleColor.navBar};
     position: fixed;
     bottom: 0;
     width: 100vw;
     div{
         font-size: 12px;
-        color: ${colors.textNav};
+        color: ${styleColor.textNav};
         padding-right: 10px;
         @media (max-width: 540px){
             font-size: 8px;

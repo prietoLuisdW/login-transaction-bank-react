@@ -1,30 +1,33 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AvisoErrorForms, BloqueInput, BtnCancel, BtnSend, Formulario, Input, Select } from "../Elements/Forms";
 import { valUser } from "../Functions/valUser";
 
 export function PersonaNatural (){
-    const [tipoDocumento, setTipoDocumento] = useState('Tipo Documento')
+
+    const defaultPN = 'Cedula de Ciudadania'
+
+    const [tipoDocumento, setTipoDocumento] = useState(defaultPN)
     const [numeroIdentificacion, setNumeroIdentificacion] = useState('')
     const [password, setPassword] = useState('')
     const [avisoFormulario, setAvisoFormulario] = useState('false')
+    
+    const navigate = useNavigate()
 
     function cambiarTipoDocumento (e){
         setTipoDocumento(e.target.value)
-        console.log(tipoDocumento)
+        setAvisoFormulario('false')
     }
-    console.log('A: ' + tipoDocumento)
-
+    
     function cambiarNumeroIdentificacion(e){
         setNumeroIdentificacion(e.target.value)
-        console.log(numeroIdentificacion)
+        setAvisoFormulario('false')
     }
-    console.log('D: ' + numeroIdentificacion)
 
     function cambiarContraseña(e){
         setPassword(e.target.value)
-        console.log(password)
+        setAvisoFormulario('false')
     }
-    console.log('e: ' + password)
 
     function onSubmit(e){
         e.preventDefault()
@@ -36,13 +39,15 @@ export function PersonaNatural (){
             let datosUsuario = 
                 {tipoDocumento: tipoDocumento, 
                 numeroIdentificacion: numeroIdentificacion,
-                password: password,
+                claveInternet: password,
                  }
             setAvisoFormulario('false')
-            console.log(datosUsuario)
-            valUser(datosUsuario)
+            console.table(datosUsuario)
+            navigate('/step1')
+            // valUser(datosUsuario, navigate)
             }else{
                 setAvisoFormulario('true')
+                console.warn('Error')
                 console.log(avisoFormulario)
             }
     }
@@ -53,8 +58,10 @@ export function PersonaNatural (){
                     {avisoFormulario === 'true' ? <AvisoErrorForms>Debes diligenciar todos los campos</AvisoErrorForms> :null}
                     <BloqueInput>
                         <label >Tipo Identificación</label>
-                        <Select onChange={cambiarTipoDocumento} error={avisoFormulario}> 
-                            <option value >Tipo de Indentificación</option>
+                        <Select onChange={cambiarTipoDocumento} 
+                            error={avisoFormulario}
+                            defaultValue={defaultPN}> 
+                            <option>Tipo de Indentificación</option>
                             <option>Cedula de Ciudadania</option>
                             <option>Nit</option>
                             <option>Cedula de Extrajeria</option>

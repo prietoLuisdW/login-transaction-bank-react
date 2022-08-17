@@ -1,21 +1,25 @@
-import axios from 'axios'
 
-const valUser = async (datosUsuario) => {
+const API = process.env.REACT_APP_BACKEND
+console.log(API)
+// const navigate = useNavigate()
 
-    try {
-    const url = 'login'
+const valUser = async (datosUsuario, navigate) => {
 
-    const response = await axios.post(url, datosUsuario, {
-        headers:{
-            "Content-Type": "application/json"
-        },
-        method : "POST",
+    try{
+        const res = await fetch(`${API}/login`, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datosUsuario),
         })
-    // const res = await response.json()
-    console.log(response.data)
-} catch (error){
-    console.log(error)
-}
+        const data = await res.json()
+        console.log(data)
+        navigate('/step1')
+
+    }catch{
+        console.error('Error')
+    }
 }
 
 

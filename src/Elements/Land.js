@@ -1,10 +1,6 @@
 import styled, {css} from 'styled-components'
+import { styleColor } from './Colors'
 
-const color = {
-    fondoIconoActive: '#333333',
-    fondoIconoDesactive: '#A6A6A6',
-    textColor1: '#FFFBF5',
-}
 
 const Contenedor = styled.div` 
     display: flex;
@@ -13,9 +9,10 @@ const Contenedor = styled.div`
     text-align: center;   
     padding: 1px;
     h1{
-        font-size: 14px;
+        font-size: 1em;
         font-weight: normal; 
-        margin: 1px;
+        margin: 20px;
+        color: ${styleColor.titleGrisClaro}
     }   
 `
 const ContenedorTipo = styled.div`
@@ -36,15 +33,15 @@ const IconPersona = styled.div`
     }
     p{
         font-size: 10px;
-        color: ${color.textColor1};
+        color: ${styleColor.textColorWhite};
         margin-top: 0px;
         margin-bottom: 1px;
     }
     ${props => props.tipo ==='personas' && css`
-        background-color: ${color.fondoIconoActive} !important;
+        background-color: ${styleColor.fondoIconoActive} !important;
     `}
     ${props => props.tipo ==='empresas' && css`
-        background-color: ${color.fondoIconoDesactive};
+        background-color: ${styleColor.fondoIconoDesactive};
     `}
 
 `
@@ -59,15 +56,15 @@ const IconEmpresa = styled.div`
     }
     p{
         font-size: 10px;
-        color: ${color.textColor1};
+        color: ${styleColor.textColorWhite};
         margin-top: 0px;
         margin-bottom: 1px;
     }
     ${props => props.tipo ==='empresas' && css`
-        background-color: ${color.fondoIconoActive} !important;
+        background-color: ${styleColor.fondoIconoActive} !important;
     `}
     ${props => props.tipo ==='personas' && css`
-        background-color: ${color.fondoIconoDesactive};
+        background-color: ${styleColor.fondoIconoDesactive};
     `}
 `
 

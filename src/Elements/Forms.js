@@ -1,17 +1,5 @@
 import styled, {css} from 'styled-components'
-
-const coloritos = {
-    relleno: '#BFBFBF',
-    border: '#727273',
-    borderError: '#A62103',
-    rellenoInput: '#F5F5F5',
-    leyendaError: '#D46424',
-    labels: '#222426',
-    select: '#222426',
-    btnEviar: '#222426',
-    btnCancel: '#727273',
-    textError: '#A62103',
-}
+import { styleColor } from './Colors'
 
 const Formulario = styled.form`
     max-width: 800px;
@@ -23,7 +11,7 @@ const Formulario = styled.form`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
-    background-color: ${coloritos.relleno};
+    background-color: ${styleColor.rellenoFormulario};
     @media (max-width: 680px){
         grid-template-columns: 1fr;
     }
@@ -39,40 +27,42 @@ const BloqueInput = styled.div`
         min-height: 30px;
         cursor: pointer;
         align-items: center;
-        color: ${coloritos.labels}
+        color: ${styleColor.colorTextLabels};
     }
 
 `
 const Select = styled.select`
     position: relative;
+    color: ${styleColor.titleGrisClaro};
     z-index: 90;
     width: 100%;
-    background: ${coloritos.rellenoInput};
+    background: ${styleColor.rellenoInput};
     border-radius: 3px;
-    heinght: 50px;
+    height: 35px;
     line-height: 50px;
     padding: 8px 5px 8px 5px;
     transition: .3s ease all;
     border: 1px solid transparent;
     margin-end: 2px;
     &:focus {
-        border: 1px solid ${coloritos.border};
+        border: 1px solid ${styleColor.colorBorderFocus};
         outline: none;
         box-shadow: 3px 0px 30px rgba(163, 163, 163. 0.4);
     }
     option{
-        color: ${coloritos.select}
+        color: ${styleColor.titleGrisClaro}
     }
     ${props => props.error === 'true' && css`
-        border: 2px solid ${coloritos.borderError} !important;
+        border: 2px solid ${styleColor.colorBorderError} !important;
     `}
 `
 
 const Input = styled.input`
     position: relative;
+    color: ${styleColor.titleGrisClaro};
     z-index: 90;
     width: 100%;
-    background: ${coloritos.rellenoInput};
+    background: ${styleColor.rellenoInput};
     border-radius: 3px;
     heinght: 30px;
     line-height: 30px;
@@ -81,11 +71,11 @@ const Input = styled.input`
     border: 1px solid transparent;
     margin-end: 10px;
     ${props => props.error === 'true' && css`
-        border: solid 2px ${coloritos.borderError} !important;
+        border: solid 2px ${styleColor.colorBorderError} !important;
     `}
 
     &:focus {
-        border: 1px solid ${coloritos.border};
+        border: 1px solid ${styleColor.colorBorderFocus};
         outline: none;
         box-shadow: 3px 0px 30px rgba(163, 163, 163. 0.4);
     }
@@ -95,7 +85,7 @@ const BtnCancel = styled.button`
     height: 45px;
     line-height: 45px;
     width: 100%;
-    background: ${coloritos.btnCancel};
+    background: ${styleColor.bkBtnSendGreyDark};
     color: #fff;
     font-weigth: bold;
     border: none;
@@ -112,7 +102,7 @@ const BtnSend = styled.button`
     height: 45px;
     line-height: 45px;
     width: 100%;
-    background: ${coloritos.btnEviar};
+    background: ${styleColor.bkBtnSendGrinDark};
     color: #fff;
     font-weigth: bold;
     border: none;
@@ -128,7 +118,7 @@ const BtnSend = styled.button`
 const AvisoErrorForms = styled.p`
     grid-column: span 3; 
     font-size: 12px;
-    color: ${coloritos.textError};
+    color: ${styleColor.colorTextError};
     @media (max-width: 680px){
         grid-column: 1;
     }
