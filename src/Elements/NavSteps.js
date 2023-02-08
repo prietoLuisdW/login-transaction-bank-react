@@ -32,7 +32,6 @@ const BtnStep = styled.button`
         border-top: 25px solid ${styleColor.rellenoInactiveBtn};
         border-bottom: 25px solid ${styleColor.rellenoInactiveBtn};
     }
-
     ::after{
         content: '';
         position: absolute;
@@ -41,8 +40,6 @@ const BtnStep = styled.button`
         border-bottom: 25px solid ${styleColor.colorTextBtnActive};
         right: 0;
     }
-    
-
     h1{
         font-size: 14px;
         margin-left: 8px;
@@ -57,6 +54,17 @@ const BtnStep = styled.button`
             border-bottom-left-radius: -25px !important;
 
             color: ${styleColor.colorTextBtnActive};
+
+            ::before{
+                border-left: 20px solid ${styleColor.colorTextBtnActive};
+                border-top: 25px solid ${styleColor.rellenoActiveBtn};
+                border-bottom: 25px solid ${styleColor.rellenoActiveBtn};
+            }
+            ::after{
+                border-left: 20px solid ${styleColor.rellenoActiveBtn};
+                border-top: 25px solid ${styleColor.colorTextBtnActive};
+                border-bottom: 25px solid ${styleColor.colorTextBtnActive};
+            }
         `
     }
 `

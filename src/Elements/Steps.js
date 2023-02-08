@@ -43,6 +43,9 @@ const Detalle = styled.h3`
     font-size: 15px;
     font-weight: bolder;
     padding: 10px 0px;
+    ${props => props.alerta === 'false' && css`
+        color: ${styleColor.colorTextError};
+    `}
 `
 
 const Botonera = styled.div`
@@ -75,8 +78,9 @@ const Botton = styled.button`
 `
 
 const Aviso = styled.h5`
-    color: red;
+    color: ${styleColor.colorTextError};
     font-size: 12px;
+    font-weight: normal; 
 `
 
 const TokenGrup = styled.div`

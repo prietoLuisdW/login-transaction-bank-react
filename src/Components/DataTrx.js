@@ -13,6 +13,8 @@ export function DataTrx(){
     const [valor] = useState(Datos.valor)
     const [costo] = useState(Datos.costo) 
     
+    const [suficiente, setSuficiente] = useState('true')
+    
     // const [error, setError] = useState('false')
 
     const navigate = useNavigate()
@@ -20,6 +22,8 @@ export function DataTrx(){
     function handleGoToStep2(){
         if(valor<=disponible){
             navigate('/step2')
+        }else{
+            setSuficiente('false')
         }
         
     }
@@ -40,24 +44,23 @@ export function DataTrx(){
                 <Concepto>Selecciona la Cuenta:</Concepto>
                 <Detalle>{cuenta}</Detalle>
 
-                <Concepto>Disponible:</Concepto>
-                <Detalle>
+                <Concepto >Disponible:</Concepto>
+                <Detalle alerta={suficiente}>
                 {(disponible > 0) ? <Numeral value={disponible} format={"$ 0,0.00"}/> : `$ ${disponible}`}
                 </Detalle>
 
                 <Concepto>valor:</Concepto>
-                <Detalle>
+                <Detalle alerta={suficiente}>
                 {(valor > 0) ? <Numeral value={valor} format={"$ 0,0.00"}/> : `$ ${valor}`}
                 </Detalle>
 
                 <Concepto>Costo:</Concepto>
-                <Detalle>
+                <Detalle >
                     {(costo > 0) ? <Numeral value={costo} format={"$ 0,0.00"}/> : `$ ${costo}`}
                 </Detalle>
+                {(suficiente === 'false') ? <Aviso>Fondos insuficientes</Aviso> : <div />}
             </Bloque>
-
-            {(valor>disponible) ? <Aviso>Fondos insuficientes</Aviso> : <div />}
-
+           
             <Botonera>
                 <Botton name='cancel' onClick={handleGoToBack}>Regresar</Botton>
                 <Botton name='send' onClick={handleGoToStep2}>Continuar</Botton>

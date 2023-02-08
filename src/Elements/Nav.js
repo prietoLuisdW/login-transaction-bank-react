@@ -4,6 +4,7 @@ import { styleColor } from './Colors'
 
 
 const Header = styled.nav`
+    height: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,7 +17,7 @@ const Header = styled.nav`
         color: ${styleColor.textNav};
         font-size: 12px;
         font-weight: normal;
-        margin: 0px 10px;
+        margin: 0px 20px;
         text-align: end;
         @media (max-width: 500px){
             font-size: 10px;
@@ -27,7 +28,7 @@ const Header = styled.nav`
 
 const ImgBrand = styled.img`
 height: 45px;
-margin: 8px;
+margin: 20px;
 @media (max-width: 500px){
     height: 35px;
 }

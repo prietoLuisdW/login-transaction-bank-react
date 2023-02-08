@@ -14,13 +14,14 @@ export function Confirmation(){
     const tokenBD = Datos.tokenBD
 
     const [errorToken, setErrorToken] = useState('false')
-    const [token, setToken] = useState()
+    const [token, setToken] = useState('')
+    const [mensajeErrorToken, setMensajeErrorToken] = useState('')
 
     function handleSetToken (e){
         setToken(e.target.value)
         console.log(tokenBD)
         setErrorToken('false')
-
+        setMensajeErrorToken('')
     }
     console.log(token)
 
@@ -32,8 +33,12 @@ export function Confirmation(){
         if (token == tokenBD){
             navigate('/step3')
             console.log(errorToken)
-        }else{
+        }else if (token=='') {
+            setMensajeErrorToken('Código no ingresado')
             setErrorToken('true')
+        } else {
+            setErrorToken('true')
+            setMensajeErrorToken('Código Incorrecto')
             console.warn(errorToken)
         }
         
@@ -80,7 +85,7 @@ export function Confirmation(){
                 <nav>
                     <img src={SoftToken}/>
                 </nav>
-                {errorToken === 'true' && <AvisoErrorForms>Código no coincide!</AvisoErrorForms>}
+                {errorToken === 'true' && <AvisoErrorForms>{mensajeErrorToken}</AvisoErrorForms>}
             </TokenGrup>
             <Botonera>
                 <Botton name='cancel' onClick={handleGoToStep1}>Regresar</Botton>

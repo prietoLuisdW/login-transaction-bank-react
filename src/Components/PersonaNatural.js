@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { AvisoErrorForms, BloqueInput, BtnCancel, BtnSend, Formulario, Input, Select } from "../Elements/Forms";
 import { valUser } from "../Functions/valUser";
 
+import { clientes } from "../Elements/Datos";
+
 export function PersonaNatural (){
 
     const defaultPN = 'Cedula de Ciudadania'
@@ -11,6 +13,7 @@ export function PersonaNatural (){
     const [numeroIdentificacion, setNumeroIdentificacion] = useState('')
     const [password, setPassword] = useState('')
     const [avisoFormulario, setAvisoFormulario] = useState('false')
+    const [textError, SetTextError] = useState('')
     
     const navigate = useNavigate()
 
@@ -36,17 +39,36 @@ export function PersonaNatural (){
             numeroIdentificacion !== '' && 
             password !== ''
             ){
-            let datosUsuario = 
-                {tipoDocumento: tipoDocumento, 
-                numeroIdentificacion: numeroIdentificacion,
-                claveInternet: password,
-                 }
-            setAvisoFormulario('false')
-            console.table(datosUsuario)
-            navigate('/step1')
+            
+            let userFound = clientes.filter(user => user.id === numeroIdentificacion)
+            let userFoundSucces = clientes.filter(user => user.password === password && user.tipoId === tipoDocumento && user.id === numeroIdentificacion)
+            console.log('User: ' + userFound.length)
+            console.log('userSucces:' + userFoundSucces.length)
+            if(userFound.length>0){
+                
+                if(userFoundSucces.length>0){
+                    setAvisoFormulario('false')
+                    console.table(userFoundSucces)
+                    navigate('/step1')
+                }else if (userFound.length>0){
+                    setAvisoFormulario('true')
+                    SetTextError('Datos no coinciden')   
+                }
+            }else{
+                setAvisoFormulario('true')
+                SetTextError('Usuario no encontrado')
+            }
+
+            // let datosUsuario = 
+            //     {tipoDocumento: tipoDocumento, 
+            //     numeroIdentificacion: numeroIdentificacion,
+            //     claveInternet: password,
+            //      }
+            
             // valUser(datosUsuario, navigate)
             }else{
                 setAvisoFormulario('true')
+                SetTextError('Ingrese los datos')
                 console.warn('Error')
                 console.log(avisoFormulario)
             }
@@ -55,7 +77,7 @@ export function PersonaNatural (){
     return(
         <div>
             <Formulario action="" onSubmit={onSubmit} >
-                    {avisoFormulario === 'true' ? <AvisoErrorForms>Debes diligenciar todos los campos</AvisoErrorForms> :null}
+                    {avisoFormulario === 'true' ? <AvisoErrorForms>{textError}</AvisoErrorForms> :null}
                     <BloqueInput>
                         <label >Tipo Identificación</label>
                         <Select onChange={cambiarTipoDocumento} 

@@ -5,7 +5,7 @@ export const styleColor = {
     colorTextBtnActive: '#FFF', //Color del texto en el paso activo
     colorTextStepInactive: '#545759', //Color Texto Paso Inactivo
     colorTextGrey: '#6B7072', //Color del Texto normal - Gris
-    colorBorder: '#eeeeee',
+    colorBorder: '#eeeeee', //
     rellenoStepInactive: '#A1A1A1', // Color del numero del paso inactivo
 
     leyendaError: '#D46424',
